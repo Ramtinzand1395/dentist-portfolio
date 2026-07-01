@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Vazir";
+  src: url("/fonts/Vazir.woff2") format("woff2"),
+       url("/fonts/Vazir.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Tanha";
+  src: url("/fonts/Tanha.woff2") format("woff2"),
+       url("/fonts/Tanha.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-vazir: "Vazir", sans-serif;
+  --font-tanha: "Tanha", sans-serif;
+}
+
+body {
+  font-family: var(--font-vazir);
+      margin: 0;
+    background: #ffffff;
+
+}
+
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  ::selection {
+    background: #2563eb;
+    color: white;
+  }
+}
+
+@layer components {
+  .input {
+    @apply w-full rounded-2xl border border-slate-200 bg-white px-5 py-4 text-slate-950 outline-none transition placeholder:text-slate-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100;
+  }
+}
